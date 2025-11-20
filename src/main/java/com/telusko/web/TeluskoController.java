@@ -7,9 +7,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class TeluskoController 
 {
 	@GetMapping("/")
-	public String getInfo()
-	{
-		return "Gradle Telusko App";
-	}
+    public Map<String, Object> getInfo() {
+
+        return Map.of(
+                "platform", "Telusko Learning",
+                "description", "Learn Java, Spring Boot, DevOps, AI Engineering with Live + Recorded sessions",
+                "website", "https://telusko.com",
+                "courses", new String[]{
+                        "Java Full Stack",
+                        "Spring Boot",
+                        "DevOps with AWS",
+                        "Docker & Kubernetes",
+                        "AI Engineering"
+                }
+        );
+    }
 
 }
